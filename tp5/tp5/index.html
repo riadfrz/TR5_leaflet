@@ -1,0 +1,539 @@
+<!--
+&lt;!&ndash;
+&lt;!&ndash;
+&lt;!&ndash;
+&lt;!&ndash;
+&lt;!&ndash;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map</title>
+    &lt;!&ndash; Include Leaflet CSS and JavaScript &ndash;&gt;
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    &lt;!&ndash; Define the CSS style for the map container &ndash;&gt;
+    <style>
+        /* Set the size of the map container */
+        #map {
+            width: 1000px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+&lt;!&ndash; Create a div element with the id 'map' to hold the map &ndash;&gt;
+<div id="map"></div>
+
+<script>
+    // Initialize the map
+    var map = L.map('map').setView([51.505, -0.09], 13);
+
+    // Add a tile layer (you can choose different tile providers)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+    }).addTo(map);
+
+    // Add a marker to the map
+    L.marker([51.505, -0.09]).addTo(map)
+        .bindPopup('Hello, this is a Leaflet map!')
+        .openPopup();
+</script>
+</body>
+</html>
+&ndash;&gt;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map</title>
+    &lt;!&ndash; Include Leaflet CSS and JavaScript &ndash;&gt;
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    &lt;!&ndash; Define the CSS style for the map container &ndash;&gt;
+    <style>
+        /* Set the size of the map container */
+        #map {
+            width: 1000px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+&lt;!&ndash; Create buttons to navigate to different locations &ndash;&gt;
+<button onclick="navigateToLocation([48.8566, 2.3522])">France</button>
+<button onclick="navigateToLocation([41.9028, 12.4964])">Italy</button>
+<button onclick="navigateToLocation([51.5099, -0.1180])">England</button>
+<button onclick="navigateToLocation([35.682839, 139.759455])">Japan</button>
+<button onclick="navigateToLocation([50.8503, 4.3517])">Belgium</button>
+
+&lt;!&ndash; Create a div element with the id 'map' to hold the map &ndash;&gt;
+<div id="map"></div>
+
+<script>
+    var map;
+
+    function initializeMap() {
+        // Initialize the map
+        map = L.map('map').setView([51.505, -0.09], 3);
+
+        // Add a tile layer (you can choose different tile providers)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+    }
+
+    function navigateToLocation(location) {
+        if (!map) {
+            initializeMap();
+        }
+        map.setView(location, 13);
+    }
+</script>
+</body>
+</html>
+&ndash;&gt;
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map</title>
+    &lt;!&ndash; Include Leaflet CSS and JavaScript &ndash;&gt;
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    &lt;!&ndash; Define the CSS style for the map container &ndash;&gt;
+    <style>
+        /* Set the size of the map container */
+        #map {
+            width: 1000px;
+            height: 500px;
+        }
+
+        /* Style the buttons */
+        button {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+&lt;!&ndash; Create a div element with the id 'map' to hold the map &ndash;&gt;
+<div id="map"></div>
+
+&lt;!&ndash; Create buttons to navigate to different locations &ndash;&gt;
+<button onclick="navigateToLocation([48.8566, 2.3522])">France</button>
+<button onclick="navigateToLocation([41.9028, 12.4964])">Italy</button>
+<button onclick="navigateToLocation([51.5099, -0.1180])">England</button>
+<button onclick="navigateToLocation([35.682839, 139.759455])">Japan</button>
+<button onclick="navigateToLocation([50.8503, 4.3517])">Belgium</button>
+
+<script>
+    var map;
+
+    function initializeMap() {
+        // Initialize the map
+        map = L.map('map').setView([51.505, -0.09], 3);
+
+        // Add a tile layer (you can choose different tile providers)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+    }
+
+    function navigateToLocation(location) {
+        if (!map) {
+            initializeMap();
+        }
+        map.setView(location, 13);
+    }
+
+    // Initialize the map when the page loads
+    initializeMap();
+</script>
+</body>
+</html>
+&ndash;&gt;
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map</title>
+    &lt;!&ndash; Include Leaflet CSS and JavaScript &ndash;&gt;
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    &lt;!&ndash; Define the CSS style for the map container &ndash;&gt;
+    <style>
+        /* Set the size of the map container */
+        #map {
+            width: 1000px;
+            height: 500px;
+        }
+
+        /* Style the buttons */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        button {
+            flex-grow: 1;
+            margin: 0 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        /* Style the Map button */
+        #map-button {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+&lt;!&ndash; Create a div element with the id 'map' to hold the map &ndash;&gt;
+<div id="map"></div>
+
+&lt;!&ndash; Create a container for the buttons &ndash;&gt;
+<div class="button-container">
+    &lt;!&ndash; Create buttons to navigate to different locations &ndash;&gt;
+    <button onclick="navigateToLocation([48.8566, 2.3522])">France</button>
+    <button onclick="navigateToLocation([41.9028, 12.4964])">Italy</button>
+    <button onclick="navigateToLocation([51.5099, -0.1180])">England</button>
+    <button onclick="navigateToLocation([35.682839, 139.759455])">Japan</button>
+    <button onclick="navigateToLocation([50.8503, 4.3517])">Belgium</button>
+    &lt;!&ndash; Add a Map button to go back to the original map &ndash;&gt;
+    <button id="map-button" onclick="resetMap()">Map</button>
+</div>
+
+<script>
+    var map;
+    var originalMapCenter = [51.505, -0.09];
+
+    function initializeMap() {
+        // Initialize the map
+        map = L.map('map').setView(originalMapCenter, 3);
+
+        // Add a tile layer (you can choose different tile providers)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+    }
+
+    function navigateToLocation(location) {
+        if (!map) {
+            initializeMap();
+        }
+        map.setView(location, 13);
+    }
+
+    function resetMap() {
+        if (map) {
+            map.setView(originalMapCenter, 3);
+        }
+    }
+
+    // Initialize the map when the page loads
+    initializeMap();
+</script>
+</body>
+</html>
+&ndash;&gt;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map</title>
+    &lt;!&ndash; Include Leaflet CSS and JavaScript &ndash;&gt;
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    &lt;!&ndash; Define the CSS style for the map container &ndash;&gt;
+    <style>
+        /* Set the size of the map container */
+        #map {
+            width: 5000px;
+            height: 500px;
+        }
+
+        /* Style the buttons */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        button {
+            flex-grow: 1;
+            margin: 0 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: grab; /* Make buttons draggable */
+            user-select: none; /* Prevent text selection while dragging */
+        }
+
+        /* Style the Map button */
+        #map-button {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            cursor: pointer; /* Reset cursor style for Map button */
+        }
+    </style>
+</head>
+<body>
+&lt;!&ndash; Create a div element with the id 'map' to hold the map &ndash;&gt;
+<div id="map"></div>
+
+&lt;!&ndash; Create a container for the buttons &ndash;&gt;
+<div class="button-container">
+    &lt;!&ndash; Create draggable buttons to navigate to different locations &ndash;&gt;
+    <button draggable="true" ondragstart="dragStart(event)">France</button>
+    <button draggable="true" ondragstart="dragStart(event)">Italy</button>
+    <button draggable="true" ondragstart="dragStart(event)">England</button>
+    <button draggable="true" ondragstart="dragStart(event)">Japan</button>
+    <button draggable="true" ondragstart="dragStart(event)">Belgium</button>
+    &lt;!&ndash; Add a non-draggable Map button to reset the map &ndash;&gt;
+    <button id="map-button" onclick="resetMap()">Map</button>
+</div>
+
+<script>
+    var map;
+    var originalMapCenter = [51.505, -0.09];
+
+    function initializeMap() {
+        // Initialize the map
+        map = L.map('map').setView(originalMapCenter, 3);
+
+        // Add a tile layer (you can choose different tile providers)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Add a drop event listener to the map to handle button drops
+        map.getContainer().addEventListener('drop', function (event) {
+            event.preventDefault();
+            var buttonText = event.dataTransfer.getData('text');
+            switch (buttonText) {
+                case 'France':
+                    navigateToLocation([48.8566, 2.3522]);
+                    break;
+                case 'Italy':
+                    navigateToLocation([41.9028, 12.4964]);
+                    break;
+                case 'England':
+                    navigateToLocation([51.5099, -0.1180]);
+                    break;
+                case 'Japan':
+                    navigateToLocation([35.682839, 139.759455]);
+                    break;
+                case 'Belgium':
+                    navigateToLocation([50.8503, 4.3517]);
+                    break;
+            }
+        });
+
+        // Prevent default behavior for drag-and-drop
+        map.getContainer().addEventListener('dragover', function (event) {
+            event.preventDefault();
+        });
+    }
+
+    function navigateToLocation(location) {
+        if (!map) {
+            initializeMap();
+        }
+        map.setView(location, 13);
+    }
+
+    function resetMap() {
+        if (map) {
+            map.setView(originalMapCenter, 3);
+        }
+    }
+
+    // Initialize the map when the page loads
+    initializeMap();
+
+    // Function to handle the drag-and-drop of buttons
+    function dragStart(event) {
+        event.dataTransfer.setData('text', event.target.textContent);
+    }
+</script>
+</body>
+</html>
+&ndash;&gt;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map</title>
+    &lt;!&ndash; Include Leaflet CSS and JavaScript &ndash;&gt;
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    &lt;!&ndash; Define the CSS style for the map container &ndash;&gt;
+    <style>
+        /* Set the size of the map container */
+        #map {
+            width: 1000px;
+            height: 500px;
+        }
+
+        /* Style the buttons */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        button {
+            flex-grow: 1;
+            margin: 0 5px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            cursor: grab; /* Make buttons draggable */
+            user-select: none; /* Prevent text selection while dragging */
+        }
+
+        /* Style the Map button */
+        #map-button {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            cursor: pointer; /* Reset cursor style for Map button */
+        }
+    </style>
+</head>
+<body>
+&lt;!&ndash; Create a div element with the id 'map' to hold the map &ndash;&gt;
+<div id="map"></div>
+
+&lt;!&ndash; Create a container for the buttons &ndash;&gt;
+<div class="button-container">
+    &lt;!&ndash; Create draggable buttons to navigate to different locations &ndash;&gt;
+    <button draggable="true" ondragstart="dragStart(event)">France</button>
+    <button draggable="true" ondragstart="dragStart(event)">Italy</button>
+    <button draggable="true" ondragstart="dragStart(event)">England</button>
+    <button draggable="true" ondragstart="dragStart(event)">Japan</button>
+    <button draggable="true" ondragstart="dragStart(event)">Belgium</button>
+    &lt;!&ndash; Add a non-draggable Map button to reset the map &ndash;&gt;
+    <button id="map-button" onclick="resetMap()">Map</button>
+</div>
+
+<script>
+    var map;
+    var originalMapCenter = [51.505, -0.09];
+
+    function initializeMap() {
+        // Initialize the map
+        map = L.map('map').setView(originalMapCenter, 3);
+
+        // Add a tile layer (you can choose different tile providers)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Add a drop event listener to the map to handle button drops
+        map.getContainer().addEventListener('drop', function (event) {
+            event.preventDefault();
+            var buttonText = event.dataTransfer.getData('text');
+            switch (buttonText) {
+                case 'France':
+                    navigateToLocation([48.8566, 2.3522]);
+                    break;
+                case 'Italy':
+                    navigateToLocation([41.9028, 12.4964]);
+                    break;
+                case 'England':
+                    navigateToLocation([51.5099, -0.1180]);
+                    break;
+                case 'Japan':
+                    navigateToLocation([35.682839, 139.759455]);
+                    break;
+                case 'Belgium':
+                    navigateToLocation([50.8503, 4.3517]);
+                    break;
+            }
+        });
+
+        // Prevent default behavior for drag-and-drop
+        map.getContainer().addEventListener('dragover', function (event) {
+            event.preventDefault();
+        });
+    }
+
+    function navigateToLocation(location) {
+        if (!map) {
+            initializeMap();
+        }
+        map.setView(location, 13);
+    }
+
+    function resetMap() {
+        if (map) {
+            map.setView(originalMapCenter, 3);
+        }
+    }
+
+    // Initialize the map when the page loads
+    initializeMap();
+
+    // Function to handle the drag-and-drop of buttons
+    function dragStart(event) {
+        event.dataTransfer.setData('text', event.target.textContent);
+    }
+</script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+<body>
+<div id="map"></div>
+<div class="button-container">
+    <button draggable="true" ondragstart="dragStart(event)">France</button>
+    <button draggable="true" ondragstart="dragStart(event)">Italy</button>
+    <button draggable="true" ondragstart="dragStart(event)">England</button>
+    <button draggable="true" ondragstart="dragStart(event)">Japan</button>
+    <button draggable="true" ondragstart="dragStart(event)">Belgium</button>
+    <button id="map-button" onclick="resetMap()">Map</button>
+</div>
+<script src="leaflet.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
